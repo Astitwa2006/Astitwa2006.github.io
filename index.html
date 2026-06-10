@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Astitwa — Developer & AI Automation Specialist. Python, Bots, APIs, Web Apps. Available for freelance.">
+    <title>Astitwa — Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Noise Texture Overlay -->
+    <div class="noise" aria-hidden="true"></div>
+
+    <!-- Scroll Path Tracer —  lightweight, no SVG filters -->
+    <svg class="scroll-tracer" id="scroll-tracer" aria-hidden="true" preserveAspectRatio="none">
+        <path id="tracer-rail" class="tracer-rail"/>
+        <path id="tracer-active" class="tracer-active"/>
+        <circle id="tracer-dot" class="tracer-dot" r="5" cx="0" cy="0"/>
+    </svg>
+
+    <!-- Dot element for tracer (HTML, GPU-accelerated) -->
+    <div class="tracer-dot-html" id="tracer-dot-html" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+        <span class="cursor-text" id="cursor-text"></span>
+    </div>
+
+    <!-- Scroll Progress Bar (left edge) -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Section Dot Nav (right edge) -->
+    <nav class="section-nav" id="section-nav" aria-label="Page sections">
+        <a href="#hero" class="section-dot active" data-label="Top"><span></span></a>
+        <a href="#about" class="section-dot" data-label="About"><span></span></a>
+        <a href="#marquee-section" class="section-dot" data-label="Skills"><span></span></a>
+        <a href="#projects" class="section-dot" data-label="Work"><span></span></a>
+        <a href="#services" class="section-dot" data-label="Services"><span></span></a>
+        <a href="#contact" class="section-dot" data-label="Contact"><span></span></a>
+    </nav>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-count" id="preloader-count">0</div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+            </div>
+            <div class="preloader-text">loading experience</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#hero" class="logo magnetic" data-cursor="link">
+                astitwa<span class="logo-accent">.</span>
+            </a>
+            <nav class="nav" id="nav-desktop">
+                <a href="#about" class="nav-link magnetic" data-cursor="link">About</a>
+                <a href="#projects" class="nav-link magnetic" data-cursor="link">Work</a>
+                <a href="#services" class="nav-link magnetic" data-cursor="link">Services</a>
+                <a href="#contact" class="nav-link magnetic" data-cursor="link">Contact</a>
+            </nav>
+            <a href="#contact" class="header-cta magnetic" data-cursor="link" id="header-cta">
+                <span>Let's Talk</span>
+                <span class="header-cta-arrow">↗</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-cursor="link">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu-nav">
+            <a href="#about" class="mobile-menu-link">About</a>
+            <a href="#projects" class="mobile-menu-link">Work</a>
+            <a href="#services" class="mobile-menu-link">Services</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="mailto:astitwa750@gmail.com">astitwa750@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-label">
+                <div class="hero-label-line"></div>
+                <span>Developer &amp; AI Specialist</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line"><span class="hero-word reveal-text">I craft digital</span></span>
+                <span class="hero-line"><span class="hero-word reveal-text">experiences that</span></span>
+                <span class="hero-line hero-line-accent"><span class="hero-word reveal-text"><em>actually</em> work.</span></span>
+            </h1>
+            <div class="hero-bottom">
+                <div class="hero-info">
+                    <div class="hero-info-item">
+                        <span class="hero-info-label">Based in</span>
+                        <span class="hero-info-value">India</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <span class="hero-info-label">Available for</span>
+                        <span class="hero-info-value">Freelance</span>
+                    </div>
+                </div>
+                <div class="hero-scroll" data-cursor="scroll">
+                    <div class="hero-scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                Open to work
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <section class="marquee-section" id="marquee-section" aria-label="Skills">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span class="marquee-item">MERN Stack</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">AI Automation</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Python</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Web Scraping</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">REST APIs</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Axios</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Bot Development</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">React / Next.js</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">GraphQL</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Prompt Engineering</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">LangChain</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">n8n / Make.com</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Node.js</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">No-Code Dev</span><span class="marquee-sep">✦</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="marquee-item">MERN Stack</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">AI Automation</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Python</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Web Scraping</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">REST APIs</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Axios</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Bot Development</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">React / Next.js</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">GraphQL</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Prompt Engineering</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">LangChain</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">n8n / Make.com</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">Node.js</span><span class="marquee-sep">✦</span>
+                    <span class="marquee-item">No-Code Dev</span><span class="marquee-sep">✦</span>
+                </div>
+            </div>
+            <div class="marquee marquee-reverse">
+                <div class="marquee-track">
+                    <span class="marquee-item">Express.js</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Discord.py</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Telegram Bots</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">OAuth / JWT</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">RAG Pipelines</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Selenium</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">MongoDB</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Webhooks</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Docker</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">AI Agents</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Mongoose</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Data Annotation</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">PostgreSQL</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Fetch API</span><span class="marquee-sep">◆</span>
+                    <!-- Duplicate -->
+                    <span class="marquee-item">Express.js</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Discord.py</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Telegram Bots</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">OAuth / JWT</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">RAG Pipelines</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Selenium</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">MongoDB</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Webhooks</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Docker</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">AI Agents</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Mongoose</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Data Annotation</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">PostgreSQL</span><span class="marquee-sep">◆</span>
+                    <span class="marquee-item">Fetch API</span><span class="marquee-sep">◆</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-num">01</span>
+                    <span class="section-label-text">About</span>
+                </div>
+                <div class="about-content">
+                    <div class="about-left">
+                        <h2 class="about-heading reveal-up">
+                            A <em>developer</em> who
+                            <br>obsesses over the
+                            <br>details that matter.
+                        </h2>
+                    </div>
+                    <div class="about-right">
+                        <p class="about-text reveal-up">
+                            I'm a 2nd-year B.Tech CS student at AKTU with an early-onset obsession 
+                            for building things with code. Not the "hello world" kind — the kind that 
+                            solves real problems for real people.
+                        </p>
+                        <p class="about-text reveal-up">
+                            My sweet spot is the intersection of <strong>AI and automation</strong>. 
+                            I build intelligent bots, data pipelines, web scrapers, and workflow 
+                            automations that save businesses hours of manual work. If an API exists, 
+                            I've probably integrated it.
+                        </p>
+                        <p class="about-text reveal-up">
+                            I treat every project like a product — clean code, clear communication, 
+                            delivered on time. No excuses, no "it works on my machine."
+                        </p>
+                        <div class="about-stats reveal-up">
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="10">0</span>
+                                <span class="about-stat-label">Projects<br>Shipped</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="5">0</span>
+                                <span class="about-stat-label">Happy<br>Clients</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="100">0</span>
+                                <span class="about-stat-label">LeetCode<br>Solved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section projects" id="projects">
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-num">02</span>
+                    <span class="section-label-text">Selected Work</span>
+                </div>
+                <div class="projects-list">
+                    <a href="#" class="project-row" id="project-1" data-cursor="view">
+                        <div class="project-row-inner">
+                            <div class="project-index">01</div>
+                            <div class="project-name">
+                                <h3>AI Web Scraper</h3>
+                                <p>Intelligent data extraction powered by LLMs</p>
+                            </div>
+                            <div class="project-tags-row">
+                                <span>Python</span><span>OpenAI</span><span>BeautifulSoup</span>
+                            </div>
+                            <div class="project-arrow">↗</div>
+                        </div>
+                        <div class="project-row-bg"></div>
+                    </a>
+                    <a href="#" class="project-row" id="project-2" data-cursor="view">
+                        <div class="project-row-inner">
+                            <div class="project-index">02</div>
+                            <div class="project-name">
+                                <h3>Discord AI Bot</h3>
+                                <p>RAG-powered community assistant with moderation</p>
+                            </div>
+                            <div class="project-tags-row">
+                                <span>discord.py</span><span>LangChain</span><span>SQLite</span>
+                            </div>
+                            <div class="project-arrow">↗</div>
+                        </div>
+                        <div class="project-row-bg"></div>
+                    </a>
+                    <a href="#" class="project-row" id="project-3" data-cursor="view">
+                        <div class="project-row-inner">
+                            <div class="project-index">03</div>
+                            <div class="project-name">
+                                <h3>Automation Dashboard</h3>
+                                <p>Full-stack workflow monitoring &amp; orchestration</p>
+                            </div>
+                            <div class="project-tags-row">
+                                <span>React</span><span>Node.js</span><span>n8n</span>
+                            </div>
+                            <div class="project-arrow">↗</div>
+                        </div>
+                        <div class="project-row-bg"></div>
+                    </a>
+                    <a href="#" class="project-row" id="project-4" data-cursor="view">
+                        <div class="project-row-inner">
+                            <div class="project-index">04</div>
+                            <div class="project-name">
+                                <h3>Crypto Alert Bot</h3>
+                                <p>Real-time Telegram price tracker with AI summaries</p>
+                            </div>
+                            <div class="project-tags-row">
+                                <span>Python</span><span>Telegram API</span><span>Redis</span>
+                            </div>
+                            <div class="project-arrow">↗</div>
+                        </div>
+                        <div class="project-row-bg"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-num">03</span>
+                    <span class="section-label-text">What I Do</span>
+                </div>
+                <h2 class="services-heading reveal-up">
+                    Services tailored to<br>your <em>exact</em> needs.
+                </h2>
+                <div class="services-grid">
+                    <div class="service-item reveal-up" id="service-1">
+                        <div class="service-header" data-cursor="link">
+                            <span class="service-num">01</span>
+                            <h3 class="service-title">AI Automation &amp; Workflows</h3>
+                            <span class="service-toggle">+</span>
+                            <span class="service-price">from $15</span>
+                        </div>
+                        <div class="service-body">
+                            <p class="service-desc">
+                                n8n, Make.com, Zapier — connected to any API. I build automated 
+                                systems that handle your repetitive tasks while you sleep. 
+                                Lead qualification, email flows, CRM sync, AI chatbots — all wired up.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal-up" id="service-2">
+                        <div class="service-header" data-cursor="link">
+                            <span class="service-num">02</span>
+                            <h3 class="service-title">Python Scripting &amp; Scraping</h3>
+                            <span class="service-toggle">+</span>
+                            <span class="service-price">from $15</span>
+                        </div>
+                        <div class="service-body">
+                            <p class="service-desc">
+                                Custom Python scripts that extract, transform, and deliver data 
+                                from anywhere. Price monitoring, lead generation, report automation, 
+                                data pipelines. If it's on the web, I can scrape it.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal-up" id="service-3">
+                        <div class="service-header" data-cursor="link">
+                            <span class="service-num">03</span>
+                            <h3 class="service-title">Bot Development</h3>
+                            <span class="service-toggle">+</span>
+                            <span class="service-price">from $20</span>
+                        </div>
+                        <div class="service-body">
+                            <p class="service-desc">
+                                Discord &amp; Telegram bots with AI brains. Moderation, Q&amp;A, 
+                                community engagement, crypto alerts, content delivery — 
+                                powered by RAG, LLMs, and real-time APIs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal-up" id="service-4">
+                        <div class="service-header" data-cursor="link">
+                            <span class="service-num">04</span>
+                            <h3 class="service-title">Web Development</h3>
+                            <span class="service-toggle">+</span>
+                            <span class="service-price">from $50</span>
+                        </div>
+                        <div class="service-body">
+                            <p class="service-desc">
+                                React, Next.js, Node.js — modern, responsive, fast. Landing pages, 
+                                dashboards, full-stack apps. Not cookie-cutter templates. 
+                                Every pixel and interaction is intentional.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-item reveal-up" id="service-5">
+                        <div class="service-header" data-cursor="link">
+                            <span class="service-num">05</span>
+                            <h3 class="service-title">API Integration &amp; Design</h3>
+                            <span class="service-toggle">+</span>
+                            <span class="service-price">from $20</span>
+                        </div>
+                        <div class="service-body">
+                            <p class="service-desc">
+                                REST, GraphQL, webhooks, OAuth — I connect systems that don't talk 
+                                to each other. Payment gateways, social APIs, AI services, CRMs. 
+                                Clean architecture, proper error handling, documented.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-num">04</span>
+                    <span class="section-label-text">Get in Touch</span>
+                </div>
+                <div class="contact-content">
+                    <h2 class="contact-heading reveal-up">
+                        Have a project?<br>Let's <em>build</em> it.
+                    </h2>
+                    <p class="contact-subtext reveal-up">
+                        I respond to every message within a few hours. 
+                        Tell me about your idea and let's figure out the best approach together.
+                    </p>
+                    <div class="contact-links-grid reveal-up">
+                        <a href="mailto:astitwa750@gmail.com" class="contact-block magnetic" data-cursor="link" id="contact-email">
+                            <span class="contact-block-label">Email</span>
+                            <span class="contact-block-value">astitwa750@gmail.com</span>
+                            <span class="contact-block-arrow">↗</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/astitwa-mishra-43b15b37a/" target="_blank" rel="noopener noreferrer" class="contact-block magnetic" data-cursor="link" id="contact-linkedin">
+                            <span class="contact-block-label">LinkedIn</span>
+                            <span class="contact-block-value">linkedin.com/in/astitwa-mishra</span>
+                            <span class="contact-block-arrow">↗</span>
+                        </a>
+                        <a href="https://github.com/Astitwa2006" target="_blank" rel="noopener noreferrer" class="contact-block magnetic" data-cursor="link" id="contact-github">
+                            <span class="contact-block-label">GitHub</span>
+                            <span class="contact-block-value">github.com/Astitwa2006</span>
+                            <span class="contact-block-arrow">↗</span>
+                        </a>
+                        <a href="https://fiverr.com/yourprofile" target="_blank" rel="noopener noreferrer" class="contact-block magnetic" data-cursor="link" id="contact-fiverr">
+                            <span class="contact-block-label">Fiverr</span>
+                            <span class="contact-block-value">fiverr.com/you</span>
+                            <span class="contact-block-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-name">astitwa<span class="logo-accent">.</span></span>
+                <span class="footer-copy">© 2026</span>
+            </div>
+            <div class="footer-right">
+                <span>Designed &amp; engineered from scratch.</span>
+            </div>
+        </div>
+        <div class="footer-marquee">
+            <div class="footer-marquee-track">
+                <span>OPEN TO WORK — </span><span>LET'S COLLABORATE — </span>
+                <span>AVAILABLE FOR FREELANCE — </span><span>OPEN TO WORK — </span>
+                <span>LET'S COLLABORATE — </span><span>AVAILABLE FOR FREELANCE — </span>
+                <span>OPEN TO WORK — </span><span>LET'S COLLABORATE — </span>
+                <span>AVAILABLE FOR FREELANCE — </span><span>OPEN TO WORK — </span>
+                <span>LET'S COLLABORATE — </span><span>AVAILABLE FOR FREELANCE — </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
