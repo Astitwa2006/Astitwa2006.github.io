@@ -206,15 +206,16 @@
     @media print {
       @page {
         size: A4;
-        margin: 1.2cm 1.5cm;
+        margin: 0.6cm 0.8cm;
       }
 
       html {
-        font-size: 13px;
+        font-size: 11.5px;
       }
 
       body {
         background: white;
+        line-height: 1.25;
       }
 
       .resume-container {
@@ -222,6 +223,30 @@
         margin: 0;
         padding: 0;
         box-shadow: none;
+      }
+
+      .section {
+        margin-top: 10px;
+      }
+
+      .section-title {
+        margin-bottom: 4px;
+      }
+
+      .entry {
+        margin-bottom: 4px;
+      }
+
+      .bullets li {
+        margin-bottom: 1px;
+      }
+
+      .skills-block p {
+        margin-bottom: 2px;
+      }
+
+      .simple-bullets li {
+        margin-bottom: 1.5px;
       }
 
       a {
@@ -297,11 +322,9 @@
         <span>Ghaziabad, UP (Remote)</span>
       </div>
       <ul class="bullets">
-        <li><strong>Single-handedly engineered</strong> and deployed the official website for the Santhal Strikers sports league, managing the end-to-end product lifecycle from scratch.</li>
-        <li>Developed a highly responsive and custom user interface using <strong>React</strong> and standard styling methodologies to ensure seamless client-side performance.</li>
-        <li>Built a secure <strong>backend API infrastructure with Node.js and Express.js, implementing custom database schemas and controllers with MongoDB and Mongoose.</strong></li>
-        <li>Integrated live scores APIs and coordinated directly with streaming service providers to deliver stable, <strong>real-time video broadcast streams</strong> with minimal latency.</li>
-        <li>Managed complete deployment, <strong>domain mapping, server hosting, and database reliability for the tournament active during June 10 – 28, 2026</strong>.</li>
+        <li><strong>Single-handedly engineered</strong> and deployed the official sports league website, designing the full product architecture from scratch.</li>
+        <li>Built a secure <strong>backend API infrastructure with Node.js and Express.js, implementing custom database schemas and controllers with MongoDB and Mongoose</strong>, paired with a responsive <strong>React</strong> user interface.</li>
+        <li>Integrated live scores APIs and coordinated with streaming providers to deliver real-time broadcast streams with minimal latency; managed <strong>domain mapping, server hosting, and database reliability for the tournament active during June 10 – 28, 2026</strong>.</li>
       </ul>
     </div>
   </section>
@@ -383,19 +406,7 @@
       </ul>
     </div>
 
-    <!-- Project 4 -->
-    <div class="entry">
-      <div class="entry-header">
-        <span>CRYPTO ALERT BOT - <a href="https://github.com/Astitwa2006" target="_blank">Link</a></span>
-        <span>SEPTEMBER 2025</span>
-      </div>
-      <div class="entry-tech">Technologies Used- Python, Telegram API, Redis</div>
-      <ul class="bullets">
-        <li>Built a Telegram bot that tracks cryptocurrency prices in real-time, sending instant alerts when prices breach user-defined thresholds.</li>
-        <li>Integrated CoinGecko REST APIs and implemented Redis caching to store current rates, reducing API request overhead by <strong>60%</strong>.</li>
-        <li>Implemented cron-like scheduling for daily market summaries and AI-powered trend analysis for users.</li>
-      </ul>
-    </div>
+
   </section>
 
   <!-- ====== ACHIEVEMENTS ====== -->
