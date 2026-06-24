@@ -4,3 +4,4 @@ node_modules/
 dist/
 .env
 .system_generated/
+SCT_WD_*
