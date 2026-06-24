@@ -216,7 +216,7 @@ export default function Home() {
 
           <div className="hidden xl:block w-1/4 bg-transparent h-[500px] xl:h-[700px]" />
           
-          <a href="https://yash-study-hub-app.vercel.app" target="_blank" rel="noreferrer" className="w-full xl:w-3/4 h-[400px] xl:h-[700px] relative overflow-hidden bg-zinc-900 grayscale group-hover:grayscale-0 transition-all duration-700 block cursor-pointer order-1 xl:order-none">
+          <a href="https://yash-study-hub-app.vercel.app" target="_blank" rel="noreferrer" className="w-full xl:w-3/4 h-[400px] xl:h-[700px] relative overflow-hidden bg-zinc-900 grayscale-0 xl:grayscale xl:group-hover:grayscale-0 transition-all duration-700 block cursor-pointer order-1 xl:order-none">
             <Image src="/proj1.png" alt="Yash Study Hub" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-1000" />
             
             {/* Functional Hover State CTA */}
@@ -254,7 +254,7 @@ export default function Home() {
               </div>
             </div>
             
-            <a href="https://github.com/Astitwa2006/AI-WEBSCRAPER" target="_blank" rel="noreferrer" className="block w-full h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale group-hover:grayscale-0 transition-all duration-700 mt-0 xl:mt-32 order-1 xl:order-none">
+            <a href="https://github.com/Astitwa2006/AI-WEBSCRAPER" target="_blank" rel="noreferrer" className="block w-full h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale-0 xl:grayscale xl:group-hover:grayscale-0 transition-all duration-700 mt-0 xl:mt-32 order-1 xl:order-none">
               <Image src="/ai_scraper.png" alt="AI Web Scraper" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors duration-500 flex items-center justify-center">
                 <div className="translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-white text-black px-8 py-4 uppercase tracking-widest font-bold text-sm flex items-center gap-2">
@@ -287,7 +287,7 @@ export default function Home() {
               </div>
             </div>
             
-            <a href="https://github.com/Astitwa2006/AI-DISCORD-BOT" target="_blank" rel="noreferrer" className="block w-full h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale group-hover:grayscale-0 transition-all duration-700 order-1 xl:order-none">
+            <a href="https://github.com/Astitwa2006/AI-DISCORD-BOT" target="_blank" rel="noreferrer" className="block w-full h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale-0 xl:grayscale xl:group-hover:grayscale-0 transition-all duration-700 order-1 xl:order-none">
               <Image src="/discord_bot.png" alt="Discord AI Bot" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors duration-500 flex items-center justify-center">
                 <div className="translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-white text-black px-8 py-4 uppercase tracking-widest font-bold text-sm flex items-center gap-2">
@@ -323,7 +323,7 @@ export default function Home() {
 
           <div className="hidden xl:block w-1/4 bg-transparent h-[500px] xl:h-[700px]" />
           
-          <a href="https://github.com/Astitwa2006/Automation-Dashboard" target="_blank" rel="noreferrer" className="block w-full xl:w-[70%] h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale group-hover:grayscale-0 transition-all duration-700 mt-0 xl:mt-0 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:left-0 order-1 xl:order-none">
+          <a href="https://github.com/Astitwa2006/Automation-Dashboard" target="_blank" rel="noreferrer" className="block w-full xl:w-[70%] h-[400px] xl:h-[800px] relative overflow-hidden bg-zinc-900 grayscale-0 xl:grayscale xl:group-hover:grayscale-0 transition-all duration-700 mt-0 xl:mt-0 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:left-0 order-1 xl:order-none">
             <Image src="/dashboard.png" alt="Automation Dashboard" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors duration-500 flex items-center justify-center">
               <div className="translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-white text-black px-8 py-4 uppercase tracking-widest font-bold text-sm flex items-center gap-2">
