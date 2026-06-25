@@ -342,8 +342,8 @@ export default function Home() {
             <a href="mailto:astitwa750@gmail.com">LET'S BUILD.</a>
           </h2>
           <div className="mt-16 flex justify-center gap-8 uppercase font-bold text-xs tracking-widest">
-            <a href="https://github.com/Astitwa2006" className="hover:text-blue-600 transition-colors">GitHub</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">LinkedIn</a>
+            <a href="https://github.com/Astitwa2006" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/astitwa-mishra" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">LinkedIn</a>
             <a href="#" className="hover:text-blue-600 transition-colors">Twitter</a>
           </div>
         </div>
